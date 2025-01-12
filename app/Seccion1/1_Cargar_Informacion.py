@@ -9,6 +9,7 @@
 """
 
 import pandas as pd
+from sqlalchemy.exc import SQLAlchemyError
 from DatabaseHandler import DatabaseHandler
 
 # Leer archivo CSV
@@ -23,7 +24,7 @@ table_name = 'Cargo'
 try:
     data.to_sql(table_name, con=engine, if_exists='replace', index=False)
     print(f"Datos insertados en la tabla {table_name}.")
-except exc.SQLAlchemyError as e:
+except SQLAlchemyError as e:
     print(f"Error al insertar datos en la tabla {table_name}: {e}")
 finally:
     db_handler.close()  # Asegurarse de cerrar la conexión después de usarla.

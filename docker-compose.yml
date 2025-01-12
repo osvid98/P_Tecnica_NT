@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: Seccion1_Container
+    container_name: Contenedor_Python
     volumes:
       - ./app:/usr/src/app
     working_dir: /usr/src/app
@@ -21,7 +21,7 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: Seccion1_DB
+    container_name: Contenedor_DB
     environment:
       MYSQL_ROOT_PASSWORD: 123
       MYSQL_DATABASE: mydb

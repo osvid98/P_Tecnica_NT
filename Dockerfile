@@ -10,6 +10,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia el resto del código de la aplicación
-COPY . .
+COPY app .
 
 CMD ["tail", "-f", "/dev/null"]
